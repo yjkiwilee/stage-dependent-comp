@@ -85,7 +85,6 @@ result_data/wp2/bootstrap/all_bootstrap.csv
 local_data
 r_data
 
-resilienceNERC.Rproj
-
 .*
 !.gitignore
+forZenodo/result_data/
