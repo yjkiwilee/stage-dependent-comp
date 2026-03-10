@@ -2,10 +2,4 @@
 
 [code](code/): All code files used for data analysis, simulations, visualisation
 
-[figures](figures/): Output figures
-
-[result_data](result_data/): Result data except community simulation data due to GitHub storage space constraints
-
-# Notes
-
-For broken code / code that needs updating, please create an issue.
+To duplicate the project, you can open "comm_sims_run_main.R" and run all other scripts, in the correct order, from there. 
