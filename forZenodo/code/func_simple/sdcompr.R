@@ -10,7 +10,8 @@
 SIMEQ_TIMESTEP <- 1000
 # Number of timesteps used for robust k_mat estimation
 SIMEQ_TIMESTEP_ROBUST <- 7000
-# Number of timesteps to be averaged for getting asymptotic behaviour of stochastic / cyclic / chaotic models
+# Number of timesteps to be averaged for getting asymptotic behaviour of
+# stochastic / cyclic / chaotic models
 SIMEQ_AVGTF <- 5000
 # Minimum stage abundance
 MIN_SIZE <- 1

@@ -12,8 +12,9 @@ if(system.file(package="pacman") == "") {
   install.packages("pacman")
 }
 
-# Set the working directory to the location where you have unzipped the code and data archive
-setwd("/Users/chrissy/Oxford_Postdoc/MBiol_JunLee/stage-dependent-comp/forZenodo/")
+# Set the working directory to the location where you have unzipped the code and
+# data archive
+setwd("/Users/myname/stage-dependent-comp/")
 
 # If the results directories do not exist, then make them:
 if (!dir.exists(file.path("result_data"))){
