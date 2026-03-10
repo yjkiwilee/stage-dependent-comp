@@ -84,7 +84,7 @@ result_data/wp3
 result_data/wp2/bootstrap/all_bootstrap.csv
 local_data
 r_data
-
 .*
 !.gitignore
 forZenodo/result_data/
+Anonymized
