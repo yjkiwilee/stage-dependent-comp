@@ -8,7 +8,7 @@
 
 require("here")
 
-source(here("StageDependentComp","code","comm_sims","sub_scripts","comm_sims_init_setup.R"))
+source(here("code","comm_sims","sub_scripts","comm_sims_init_setup.R"))
 
 # Constant parameters
 ## Number of life cycle stages
@@ -132,7 +132,7 @@ spp_vrs_list <- lapply(names(spp_vrs), function(ddvr) {
 
 write_csv(
   bind_rows(spp_vrs_list),
-  here("StageDependentComp","result_data","wp3","spp_vrs.csv")
+  here("result_data","wp3","spp_vrs.csv")
 )
 
 # ======= Define stage-independent community models =======
@@ -251,9 +251,9 @@ pop_eq_structs_df <- tibble(
   sp2_a_norm = numeric()
 )
 
-if(file.exists(here("StageDependentComp","result_data","wp3","pop_eq_structs.csv"))) {
+if(file.exists(here("result_data","wp3","pop_eq_structs.csv"))) {
   pop_eq_structs_df <- read_csv(
-    here("StageDependentComp","result_data","wp3","pop_eq_structs.csv")
+    here("result_data","wp3","pop_eq_structs.csv")
   )
 } else {
   for(dd_vr_name in vr_names) {
@@ -310,7 +310,7 @@ if(file.exists(here("StageDependentComp","result_data","wp3","pop_eq_structs.csv
         
         write_csv(
           pop_eq_structs_df,
-          here("StageDependentComp","result_data","wp3","pop_eq_structs.csv")
+          here("result_data","wp3","pop_eq_structs.csv")
         )
       }
     }
@@ -390,7 +390,7 @@ pop_eq_avg <- tibble(
 
 write_csv(
   pop_eq_avg,
-  here("StageDependentComp","result_data","wp3","pop_eq_structs_avg.csv")
+  here("result_data","wp3","pop_eq_structs_avg.csv")
 )
 
 # pop_eq_avg_an <- NULL
@@ -541,7 +541,7 @@ kmat_df <- kmat_df %>%
 
 write_csv(
   kmat_df,
-  here("StageDependentComp","result_data","wp3","inter_coeffs.csv")
+  here("result_data","wp3","inter_coeffs.csv")
 )
 
 
@@ -564,7 +564,7 @@ write_csv(
 # # test_comm_model$sp2_vr_sd$r[1] <- 0
 # 
 # test_tseries <- read_csv(
-#   here("StageDependentComp","result_data","wp3",
+#   here("result_data","wp3",
 #        paste0("sim_tseries_g.csv")),
 #   col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
 # )

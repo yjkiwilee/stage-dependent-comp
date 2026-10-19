@@ -24,7 +24,7 @@ sd_level <- seq(-1, 1, 0.2)
 
 for(ddvr in dd_vrs) {
   complete_tseries <- read_csv(
-    here("StageDependentComp","result_data","wp3",
+    here("result_data","wp3",
          paste0("sim_tseries_", ddvr, ".csv")),
     col_types = cols(dd_vr = col_character())
   )
@@ -215,17 +215,17 @@ for(ddvr in dd_vrs) {
 # Store results in DF
 write_csv(
   var_res_df,
-  here("StageDependentComp","result_data","wp3","var_decomp.csv")
+  here("result_data","wp3","var_decomp.csv")
 )
 write_csv(
   cor_df,
-  here("StageDependentComp","result_data","wp3","ab_struct_cor.csv")
+  here("result_data","wp3","ab_struct_cor.csv")
 )
 
 # ========= Visualise results ==========
 
 var_res_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","var_decomp.csv")
+  here("result_data","wp3","var_decomp.csv")
 ) %>%
   mutate(
     sp1_name = factor(sp1_name, levels = c("F2", "F1", "M", "S1", "S2")),
@@ -233,7 +233,7 @@ var_res_df <- read_csv(
   )
 
 cor_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","ab_struct_cor.csv")
+  here("result_data","wp3","ab_struct_cor.csv")
 ) %>%
   mutate(
     sp1_name = factor(sp1_name, levels = c("F2", "F1", "M", "S1", "S2")),
@@ -563,7 +563,6 @@ var_decomp_plot <- wrap_plots_custom(var_decomp_plots)
 
 ggsave(
   here(
-    "StageDependentComp",
     "figures",
     "comm_sims",
     "var_decomp_all.png"
@@ -577,7 +576,6 @@ var_decomp_plot_woenv <- wrap_plots_custom(var_decomp_plots_woenv)
 
 ggsave(
   here(
-    "StageDependentComp",
     "figures",
     "comm_sims",
     "var_decomp_woenv.png"
@@ -591,7 +589,6 @@ var_signif_plot <- wrap_plots_custom(var_signif_plots)
 
 ggsave(
   here(
-    "StageDependentComp",
     "figures",
     "comm_sims",
     "var_signif.png"
@@ -606,7 +603,6 @@ partial_plot <- wrap_plots_custom(partial_plots)
 
 ggsave(
   here(
-    "StageDependentComp",
     "figures",
     "comm_sims",
     "partial.png"
@@ -620,7 +616,6 @@ cor_plot <- wrap_plots_custom(cor_plots)
 
 ggsave(
   here(
-    "StageDependentComp",
     "figures",
     "comm_sims",
     "ab_struct_cor.png"
@@ -634,7 +629,6 @@ min_plot <- wrap_plots_custom(min_struct_var_plots)
 
 ggsave(
   here(
-    "StageDependentComp",
     "figures",
     "comm_sims",
     "min_r.png"

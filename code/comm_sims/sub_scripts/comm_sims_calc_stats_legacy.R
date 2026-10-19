@@ -6,7 +6,7 @@
 #' 
 
 library("here")
-source(here("StageDependentComp","code","comm_sims","sub_scripts","comm_sims_init_setup.R"))
+source(here("code","comm_sims","sub_scripts","comm_sims_init_setup.R"))
 
 dd_vrs <- c("sj", "sa", "g", "r", "f")
 
@@ -24,7 +24,7 @@ vr_sd <- 0.2
 
 # Load interaction coefficients
 kmat_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","inter_coeffs.csv")
+  here("result_data","wp3","inter_coeffs.csv")
 )
 
 # Variables to calculate means and variances of
@@ -48,7 +48,7 @@ for(ddvr in dd_vrs) {
   cat("Loading data... ")
   
   complete_tseries <- read_csv(
-    here("StageDependentComp","result_data","wp3",
+    here("result_data","wp3",
          paste0("sim_tseries_", ddvr, ".csv")),
     col_types = cols(dd_vr = col_character())
   )
@@ -192,7 +192,7 @@ for(ddvr in dd_vrs) {
   # Store results
   write_csv(
     meanvar_df,
-    here("StageDependentComp","result_data","wp3","meanvar_temp.csv")
+    here("result_data","wp3","meanvar_temp.csv")
   )
   
   cat("done!\n")
@@ -218,7 +218,7 @@ for(ddvr in dd_vrs) {
 
       write_csv(
         stat_summ_df,
-        here("StageDependentComp","result_data","wp3","stat_summ_temp.csv")
+        here("result_data","wp3","stat_summ_temp.csv")
       )
 
       cat("\tDone!\n")

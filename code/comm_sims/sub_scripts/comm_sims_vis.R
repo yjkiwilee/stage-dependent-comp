@@ -13,7 +13,7 @@ rand_seeds <- c(1:10, -1 * (1:10))
 # ===== Load processed data =====
 
 meanvar_df_ci <- read_csv(
-  here("StageDependentComp","result_data","wp3","meanvar_ci.csv")
+  here("result_data","wp3","meanvar_ci.csv")
 ) %>%
   mutate(
     foc_sp_name = factor(foc_sp_name, levels = sp_names,
@@ -23,7 +23,7 @@ meanvar_df_ci <- read_csv(
   )
 
 partial_df_ci <- read_csv(
-  here("StageDependentComp","result_data","wp3","partial_ci.csv")
+  here("result_data","wp3","partial_ci.csv")
 ) %>%
   mutate(
     foc_sp_name = factor(foc_sp_name, levels = sp_names,
@@ -33,7 +33,7 @@ partial_df_ci <- read_csv(
   )
 
 partial_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","partial.csv")
+  here("result_data","wp3","partial.csv")
 ) %>%
   mutate(
     foc_sp_name = factor(foc_sp_name, levels = sp_names,
@@ -43,7 +43,7 @@ partial_df <- read_csv(
   )
 
 mse_df_ci <- read_csv(
-  here("StageDependentComp","result_data","wp3","mse_ci.csv")
+  here("result_data","wp3","mse_ci.csv")
 ) %>%
   mutate(
     foc_sp_name = factor(foc_sp_name, levels = sp_names,
@@ -53,7 +53,7 @@ mse_df_ci <- read_csv(
   )
 
 mse_long_df_ci <- read_csv(
-  here("StageDependentComp","result_data","wp3","mse_long_ci.csv")
+  here("result_data","wp3","mse_long_ci.csv")
 ) %>%
   mutate(
     foc_sp_name = factor(foc_sp_name, levels = sp_names,
@@ -63,7 +63,7 @@ mse_long_df_ci <- read_csv(
   )
 
 mse_long_df_ci_mcomp <- read_csv(
-  here("StageDependentComp","result_data","wp3","mse_long_ci_mcomp.csv")
+  here("result_data","wp3","mse_long_ci_mcomp.csv")
 ) %>%
   mutate(
     foc_sp_name = factor(foc_sp_name, levels = sp_names),
@@ -140,7 +140,6 @@ for(var_name in var_names) {
     
     ggsave(
       here(
-        "StageDependentComp",
         "figures",
         "comm_sims",
         paste0(var_name, "_", var_type, ".png")
@@ -273,7 +272,6 @@ for(rv in partial_resp) {
 
   ggsave(
     here(
-      "StageDependentComp",
       "figures",
       "comm_sims",
       paste0("partial_", rv, "_mod.png")
@@ -352,7 +350,6 @@ for(rv in mse_resp) {
   
   ggsave(
     here(
-      "StageDependentComp",
       "figures",
       "comm_sims",
       paste0(rv, ".png")
@@ -396,7 +393,6 @@ for(rv in mse_resp) {
   
   ggsave(
     here(
-      "StageDependentComp",
       "figures",
       "comm_sims",
       paste0(rv, "_diff.png")
@@ -476,7 +472,6 @@ for(rv in mse_resp) {
   
   ggsave(
     here(
-      "StageDependentComp",
       "figures",
       "comm_sims",
       paste0(rv, "_long.png")
@@ -574,7 +569,6 @@ for(rv in mse_resp) {
   
   ggsave(
     here(
-      "StageDependentComp",
       "figures",
       "comm_sims",
       paste0(rv, "_long_merge.png")
@@ -629,7 +623,6 @@ for(rv in mse_resp) {
   
   ggsave(
     here(
-      "StageDependentComp",
       "figures",
       "comm_sims",
       paste0(rv, "_long_envonly.png")
@@ -703,7 +696,6 @@ for(rv in mse_resp) {
   
   ggsave(
     here(
-      "StageDependentComp",
       "figures",
       "comm_sims",
       paste0(rv, "_long_merge_envonly.png")
@@ -782,7 +774,6 @@ mse_example_plot <- ggplot(mse_sub_df, aes(
 
 ggsave(
   here(
-    "StageDependentComp",
     "figures",
     "comm_sims",
     "mape_example_plot.png"
@@ -861,7 +852,6 @@ mse_example_plot <- ggplot(mse_sub_df, aes(
 
 ggsave(
   here(
-    "StageDependentComp",
     "figures",
     "comm_sims",
     "mape_example_plot_noscale.png"

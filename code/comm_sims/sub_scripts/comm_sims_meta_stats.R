@@ -8,24 +8,24 @@
 # ==== Load statistical data ======
 
 meanvar_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","meanvar.csv")
+  here("result_data","wp3","meanvar.csv")
 )
 
 stat_summ_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","stat_summ.csv")
+  here("result_data","wp3","stat_summ.csv")
 )
 
 partial_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","partial.csv"),
+  here("result_data","wp3","partial.csv"),
   col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
 )
 
 spp_vrs_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","spp_vrs.csv")
+  here("result_data","wp3","spp_vrs.csv")
 )
 
 mse_long_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","mse_long_summ.csv"),
+  here("result_data","wp3","mse_long_summ.csv"),
   col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
 )
 
@@ -109,11 +109,11 @@ realised_vr_df <- realised_vr_df_new
 
 write_csv(
   realised_vr_df,
-  here("StageDependentComp","result_data","wp3","realised_spp_vrs.csv")
+  here("result_data","wp3","realised_spp_vrs.csv")
 )
 
 realised_vr_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","realised_spp_vrs.csv")
+  here("result_data","wp3","realised_spp_vrs.csv")
 )
 
 realised_vr_df_form <- realised_vr_df %>%
@@ -128,7 +128,7 @@ realised_vr_df_form <- realised_vr_df %>%
 
 write_csv(
   realised_vr_df_form,
-  here("StageDependentComp","result_data","wp3","realised_spp_vrs_form.csv")
+  here("result_data","wp3","realised_spp_vrs_form.csv")
 )
 
 sp_mpm <- vrs_to_mpm(n_stages, vrs)
@@ -252,7 +252,7 @@ print(partial_lm_summ_df %>%
 # Save summary
 write_csv(
   partial_lm_summ_df,
-  here("StageDependentComp","result_data","wp3","partial_lm_summ.csv")
+  here("result_data","wp3","partial_lm_summ.csv")
 )
 
 partial_lm_df <- partial_df %>%
@@ -284,7 +284,7 @@ mse_long_df %>%
 # ====== Summarise interaction coefficients =====
 
 kmat_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","inter_coeffs.csv"),
+  here("result_data","wp3","inter_coeffs.csv"),
   col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
 )
 
@@ -335,7 +335,7 @@ kmat_summ_df
 
 write_csv(
   kmat_summ_df,
-  here("StageDependentComp","result_data","wp3","inter_coeffs_summ.csv")
+  here("result_data","wp3","inter_coeffs_summ.csv")
 )
 
 

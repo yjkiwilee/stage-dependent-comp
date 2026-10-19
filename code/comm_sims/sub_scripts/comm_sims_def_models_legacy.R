@@ -8,7 +8,7 @@
 
 require("here")
 
-source(here("StageDependentComp","code","comm_sims","sub_scripts","comm_sims_init_setup.R"))
+source(here("code","comm_sims","sub_scripts","comm_sims_init_setup.R"))
 
 
 # Constant parameters
@@ -90,7 +90,7 @@ spp_vrs_list <- lapply(names(spp_vrs), function(sp_name) {
 
 write_csv(
   bind_rows(spp_vrs_list),
-  here("StageDependentComp","result_data","wp3","spp_vrs.csv")
+  here("result_data","wp3","spp_vrs.csv")
 )
 
 # ======= Define stage-independent community models =======
@@ -106,9 +106,9 @@ pop_coeffs_df <- tibble(
 )
 
 # Check if population coefficients have already been calculated
-if(file.exists(here("StageDependentComp","result_data","wp3","pop_coeffs.csv"))) {
+if(file.exists(here("result_data","wp3","pop_coeffs.csv"))) {
   pop_coeffs_df <- read_csv(
-    here("StageDependentComp","result_data","wp3","pop_coeffs.csv")
+    here("result_data","wp3","pop_coeffs.csv")
   )
 } else {
   set.seed(1)
@@ -172,7 +172,7 @@ if(file.exists(here("StageDependentComp","result_data","wp3","pop_coeffs.csv")))
         
         write_csv(
           pop_coeffs_df,
-          here("StageDependentComp","result_data","wp3","pop_coeffs.csv")
+          here("result_data","wp3","pop_coeffs.csv")
         )
       }
     }
@@ -221,7 +221,7 @@ if(file.exists(here("StageDependentComp","result_data","wp3","pop_coeffs.csv")))
 # 
 # write_csv(
 #   pop_coeffs_avg,
-#   here("StageDependentComp","result_data","wp3","pop_coeffs_avg.csv")
+#   here("result_data","wp3","pop_coeffs_avg.csv")
 # )
 
 # Calculate equilibrium population structures
@@ -249,9 +249,9 @@ pop_eq_structs_df <- tibble(
 )
 
 
-if(file.exists(here("StageDependentComp","result_data","wp3","pop_eq_structs.csv"))) {
+if(file.exists(here("result_data","wp3","pop_eq_structs.csv"))) {
   pop_eq_structs_df <- read_csv(
-    here("StageDependentComp","result_data","wp3","pop_eq_structs.csv")
+    here("result_data","wp3","pop_eq_structs.csv")
   )
 } else {
   for(dd_vr_name in c("sj", "sa", "g", "r", "f")) {
@@ -342,7 +342,7 @@ if(file.exists(here("StageDependentComp","result_data","wp3","pop_eq_structs.csv
         
         write_csv(
           pop_eq_structs_df,
-          here("StageDependentComp","result_data","wp3","pop_eq_structs.csv")
+          here("result_data","wp3","pop_eq_structs.csv")
         )
       }
     }
@@ -419,7 +419,7 @@ pop_eq_avg <- tibble(
 
 write_csv(
   pop_eq_avg,
-  here("StageDependentComp","result_data","wp3","pop_eq_structs_avg.csv")
+  here("result_data","wp3","pop_eq_structs_avg.csv")
 )
 
 
@@ -547,7 +547,7 @@ for(ddvr in names(base_comm_models)) {
 
 # write_csv(
 #   kmat_df,
-#   here("StageDependentComp","result_data","wp3","inter_coeffs.csv")
+#   here("result_data","wp3","inter_coeffs.csv")
 # )
 
 

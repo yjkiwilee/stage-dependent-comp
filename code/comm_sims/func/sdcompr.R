@@ -14,22 +14,22 @@ MIN_SIZE <- 0.1
 DEFAULT_POP_STRUCT <- c(100, 100)
 
 # Import sdcompr_def_model.R with functions that define a model
-source(here("StageDependentComp", "code", "comm_sims", "func", "sdcompr_def_model.R"))
+source(here("code", "comm_sims", "func", "sdcompr_def_model.R"))
 
 # Import sdcompr_mpm.R with functions related to generating Rage mpms
-source(here("StageDependentComp", "code", "comm_sims", "func", "sdcompr_mpm.R"))
+source(here("code", "comm_sims", "func", "sdcompr_mpm.R"))
 
 # Import sdcompr_projection.R with functions that project populations using a sdcomp model
-source(here("StageDependentComp", "code", "comm_sims", "func", "sdcompr_projection.R"))
+source(here("code", "comm_sims", "func", "sdcompr_projection.R"))
 
 # Import sdcompr_long.R with functions for long-term dynamics analysis
-source(here("StageDependentComp", "code", "comm_sims", "func", "sdcompr_long.R"))
+source(here("code", "comm_sims", "func", "sdcompr_long.R"))
 
 # Import sdcompr_comp_manip.R with functions for manipulating competitive coefficients
-source(here("StageDependentComp", "code", "comm_sims", "func", "sdcompr_comp_manip.R"))
+source(here("code", "comm_sims", "func", "sdcompr_comp_manip.R"))
 
 # Import sdcompr_vr_manip.R with functions for manipulating vital rates
-source(here("StageDependentComp", "code", "comm_sims", "func", "sdcompr_vr_manip.R"))
+source(here("code", "comm_sims", "func", "sdcompr_vr_manip.R"))
 
 
 

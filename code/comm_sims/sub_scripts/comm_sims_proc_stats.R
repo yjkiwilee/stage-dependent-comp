@@ -8,21 +8,21 @@
 # ===== Load raw statistical summaries =====
 
 meanvar_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","meanvar.csv")
+  here("result_data","wp3","meanvar.csv")
 )
 
 stat_summ_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","stat_summ.csv"),
+  here("result_data","wp3","stat_summ.csv"),
   col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
 )
 
 mse_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","mse_summ.csv"),
+  here("result_data","wp3","mse_summ.csv"),
   col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
 )
 
 mse_long_df <- read_csv(
-  here("StageDependentComp","result_data","wp3","mse_long_summ.csv"),
+  here("result_data","wp3","mse_long_summ.csv"),
   col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
 )
 
@@ -128,7 +128,7 @@ meanvar_df_ci <- stat_summ_calc_ci(meanvar_df_long)
 # Store results in df
 write_csv(
   meanvar_df_ci,
-  here("StageDependentComp","result_data","wp3","meanvar_ci.csv")
+  here("result_data","wp3","meanvar_ci.csv")
 )
 
 # Calculate mean
@@ -136,7 +136,7 @@ meanvar_df_avg <- apply_across_sd_rep(meanvar_df_long, mean)
 
 write_csv(
   meanvar_df_avg,
-  here("StageDependentComp","result_data","wp3","meanvar_avg.csv")
+  here("result_data","wp3","meanvar_avg.csv")
 )
 
 # ===== Calculate partial r squared =====
@@ -179,7 +179,7 @@ partial_df <- stat_summ_df_long %>%
 
 write_csv(
   partial_df,
-  here("StageDependentComp","result_data","wp3","partial.csv")
+  here("result_data","wp3","partial.csv")
 )
 
 partial_df_ci <- stat_summ_calc_ci(
@@ -191,7 +191,7 @@ partial_df_ci <- stat_summ_calc_ci(
 # Store results in df
 write_csv(
   partial_df_ci,
-  here("StageDependentComp","result_data","wp3","partial_ci.csv")
+  here("result_data","wp3","partial_ci.csv")
 )
 
 # Calculate mean
@@ -199,7 +199,7 @@ partial_df_avg <- apply_across_sd_rep(partial_df, mean, c("resp_var", "exp_var")
 
 write_csv(
   partial_df_avg,
-  here("StageDependentComp","result_data","wp3","partial_avg.csv")
+  here("result_data","wp3","partial_avg.csv")
 )
 
 # ===== Process MSE =====
@@ -240,7 +240,7 @@ mse_df_ci <- stat_summ_calc_ci(
 
 write_csv(
   mse_df_ci,
-  here("StageDependentComp","result_data","wp3","mse_ci.csv")
+  here("result_data","wp3","mse_ci.csv")
 )
 
 # Long projection MSE
@@ -265,7 +265,7 @@ mse_long_df_ci <- stat_summ_calc_ci(
 
 write_csv(
   mse_long_df_ci,
-  here("StageDependentComp","result_data","wp3","mse_long_ci.csv")
+  here("result_data","wp3","mse_long_ci.csv")
 )
 
 # Merge competitor identities
@@ -300,5 +300,5 @@ mse_long_df_ci_mcomp <- mse_long_df_long %>%
 
 write_csv(
   mse_long_df_ci_mcomp,
-  here("StageDependentComp","result_data","wp3","mse_long_ci_mcomp.csv")
+  here("result_data","wp3","mse_long_ci_mcomp.csv")
 )

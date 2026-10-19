@@ -6,7 +6,7 @@
 #' 
 
 library("here")
-source(here("StageDependentComp","code","comm_sims","sub_scripts","comm_sims_def_models.R"))
+source(here("code","comm_sims","sub_scripts","comm_sims_def_models.R"))
 
 # Timestep to start sampling
 t_start <- 600
@@ -66,7 +66,7 @@ for(ddvr in vr_names) {
   cat("\tLoading data... ")
   
   complete_tseries <- read_csv(
-    here("StageDependentComp","result_data","wp3",
+    here("result_data","wp3",
          paste0("sim_tseries_", ddvr, ".csv")),
     col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
   )
@@ -236,7 +236,7 @@ for(ddvr in vr_names) {
   # Store results
   write_csv(
     meanvar_df,
-    here("StageDependentComp","result_data","wp3","meanvar.csv")
+    here("result_data","wp3","meanvar.csv")
   )
   
   cat("done!\n")
@@ -263,7 +263,7 @@ for(ddvr in vr_names) {
 
       write_csv(
         stat_summ_df,
-        here("StageDependentComp","result_data","wp3","stat_summ.csv")
+        here("result_data","wp3","stat_summ.csv")
       )
 
       cat(" done!\n")
@@ -274,7 +274,7 @@ for(ddvr in vr_names) {
 # 
 # # Process meanvar to create a column for the difference in CV of each stage
 # meanvar_df <- read_csv(
-#   here("StageDependentComp","result_data","wp3","meanvar.csv")
+#   here("result_data","wp3","meanvar.csv")
 # )
 # 
 # meanvar_df %>%

@@ -485,7 +485,7 @@ ggplot(sd_models_slh_m_long, aes(x = st_dep, y = avg)) +
   ) +
   facet_grid(stage ~ species, scales = "free_y", labeller = labeller(species = species_labs, stage = stage_labs))
 
-ggsave(here("StageDependentComp","figures","prelim","stoch_slowlh_varstdep_mean_zoom_mult.png"), width = 8, height = 5)
+ggsave(here("figures","prelim","stoch_slowlh_varstdep_mean_zoom_mult.png"), width = 8, height = 5)
 
 # ====== B4. Plot standard deviations ======
 
@@ -545,7 +545,7 @@ ggplot(sd_models_slh_sd_long, aes(x = st_dep, y = sd, color = species)) +
   )
 
 # Save plot
-ggsave(here("StageDependentComp","figures","prelim","stoch_slowlh_varstdep_sd_zoom_mult.png"), width = 4, height = 3.8, scale = 0.8)
+ggsave(here("figures","prelim","stoch_slowlh_varstdep_sd_zoom_mult.png"), width = 4, height = 3.8, scale = 0.8)
 
 # ====== B5. Test Spearman correlation =======
 
@@ -600,7 +600,7 @@ ggplot(sd_kmat_elems_l, aes(x = st_dep, y = value, color = elem)) +
     breaks = c("V1", "V2", "V3", "V4"),
     labels = c("A1->J1", "A2->J1", "A1->J2", "A2->J2")
   )
-ggsave(here("StageDependentComp/figures/prelim/stoch_ann_elemvals_mult.png"), width = 8, height = 5)
+ggsave(here("figures/prelim/stoch_ann_elemvals_mult.png"), width = 8, height = 5)
 
 # ===== Same but with sd_models =====
 

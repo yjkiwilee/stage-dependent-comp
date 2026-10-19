@@ -1,7 +1,7 @@
 # Script for projecting populations based on parameterised models
 
 library("here")
-source(here("StageDependentComp","code","comm_sims","sub_scripts","comm_sims_def_models.R"))
+source(here("code","comm_sims","sub_scripts","comm_sims_def_models.R"))
 
 
 # Timestep to start sampling
@@ -40,7 +40,7 @@ spp_vrs_df <- bind_rows(spp_vrs_df)
 
 # Get ddvr fit parameters
 fit_mod_df <- read_csv(
-  here("StageDependentComp","result_data","wp3",
+  here("result_data","wp3",
        "ddvr_fit.csv"),
   col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
 )
@@ -70,7 +70,7 @@ for(ddvr in vr_names) {
   cat("\tLoading data... ")
   
   complete_tseries <- read_csv(
-    here("StageDependentComp","result_data","wp3",
+    here("result_data","wp3",
          paste0("sim_tseries_", ddvr, ".csv")),
     col_types = cols(dd_vr = col_character(), st_dep_level = col_factor())
   )
@@ -352,7 +352,7 @@ for(ddvr in vr_names) {
       
       write_csv(
         mse_df,
-        here("StageDependentComp","result_data","wp3","mse_long_summ.csv")
+        here("result_data","wp3","mse_long_summ.csv")
       )
     }
   }

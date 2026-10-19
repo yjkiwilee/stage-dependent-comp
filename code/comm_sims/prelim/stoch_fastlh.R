@@ -12,7 +12,7 @@ fig_def_height <- 4
 # All paths are relative to the resilienceNERC master folder
 
 # Load R file with deterministic model functions
-source(here("StageDependentComp", "code", "comm_sims", "func", "sdcompr.R"))
+source(here("code", "comm_sims", "func", "sdcompr.R"))
 
 # Number of life cycle stages
 n_stages <- 2
@@ -130,7 +130,7 @@ ggplot(st_indep_traj_long, aes(x = time, y = density, color = species, linetype 
     linetype = "Stage"
   )
 # Save figure
-ggsave(here("StageDependentComp", "figures", "prelim", "stoch_stindep_ann.png"), width = fig_def_width - 1, height = fig_def_height)
+ggsave(here("figures", "prelim", "stoch_stindep_ann.png"), width = fig_def_width - 1, height = fig_def_height)
 
 # Calculate adult / juevnile ratio & drop raw stage sizes
 st_indep_ajr <- st_indep_traj %>%
@@ -147,7 +147,7 @@ ggplot(st_indep_ajr_long, aes(x = time, y = aj_ratio, color = species)) +
   geom_line() +
   theme_bw()
 # Save figure
-ggsave(here("StageDependentComp/figures/prelim/stoch_stindep_ann_ajr.png"), width = fig_def_width, height = fig_def_height)
+ggsave(here("figures/prelim/stoch_stindep_ann_ajr.png"), width = fig_def_width, height = fig_def_height)
 
 # ====== 1.2. Stochastic stage-dependent competition model ======
 
@@ -185,7 +185,7 @@ st_dep_traj_long <- st_dep_traj %>%
 ggplot(st_dep_traj_long, aes(x = time, y = density, color = species, linetype = stage)) +
   geom_line() +
   theme_bw()
-ggsave(here("StageDependentComp/figures/prelim/stoch_stdep_ann.png"), width = fig_def_width, height = fig_def_height)
+ggsave(here("figures/prelim/stoch_stdep_ann.png"), width = fig_def_width, height = fig_def_height)
 
 # Calculate adult / juevnile ratio & drop raw stage sizes
 st_dep_ajr <- st_dep_traj %>%
@@ -202,7 +202,7 @@ ggplot(st_dep_ajr_long, aes(x = time, y = aj_ratio, color = species)) +
   geom_line() +
   theme_bw()
 # Save figure
-ggsave(here("StageDependentComp/figures/prelim/stoch_stdep_ann_ajr.png"), width = fig_def_width, height = fig_def_height)
+ggsave(here("figures/prelim/stoch_stdep_ann_ajr.png"), width = fig_def_width, height = fig_def_height)
 
 
 # ===== 1.3. Compare dispersion in the stage-dependent vs. stage-independent models =====
@@ -230,4 +230,4 @@ ggplot(sims_samp, aes(x = group, y = density, color = stage_dep)) +
   geom_point(size = 0.3, alpha = 0.1, position = position_jitterdodge(jitter.width = 0.2)) +
   theme_bw()
 # Save figure
-ggsave(here("StageDependentComp/figures/prelim/stoch_summ.png"), width = fig_def_width, height = fig_def_height)
+ggsave(here("figures/prelim/stoch_summ.png"), width = fig_def_width, height = fig_def_height)

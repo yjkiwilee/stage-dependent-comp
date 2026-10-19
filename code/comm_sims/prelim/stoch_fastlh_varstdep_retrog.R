@@ -12,8 +12,8 @@ fig_def_height <- 4
 # All paths are relative to the resilienceNERC master folder
 
 # Load R file with model functions
-source(here("StageDependentComp","code","comm_sims","func_retrog","sdcompr.R"))
-source(here("StageDependentComp","code","themes","custom_themes.R"))
+source(here("code","comm_sims","func_retrog","sdcompr.R"))
+source(here("code","themes","custom_themes.R"))
 
 # Number of life cycle stages
 n_stages <- 2
@@ -204,7 +204,7 @@ sp2_s2_mplot <- ggline(sd_models_flh_m, x = "st_dep", y = "sp2_s2", ylab = "mean
 
 # Arrange plots
 ggarrange(sp1_s1_mplot, sp1_s2_mplot, sp2_s1_mplot, sp2_s2_mplot, ncol = 2, nrow = 2)
-# ggsave(here("StageDependentComp","figures","comm_sims","stoch_fastlh_varstdep_mean_mult.png"), width = 8, height = 5)
+# ggsave(here("figures","comm_sims","stoch_fastlh_varstdep_mean_mult.png"), width = 8, height = 5)
 
 # ====== 5. Plot standard deviations ======
 
@@ -222,7 +222,7 @@ sp2_s2_sdplot <- ggline(sd_models_flh_sd, x = "st_dep", y = "sp2_s2", ylab = "sd
 
 # Arrange plots
 ggarrange(sp1_s1_sdplot, sp1_s2_sdplot, sp2_s1_sdplot, sp2_s2_sdplot, ncol = 2, nrow = 2)
-# ggsave(here("StageDependentComp/figures/prelim/stoch_fastlh_varstdep_sd_mult.png"), width = 8, height = 5)
+# ggsave(here("figures/prelim/stoch_fastlh_varstdep_sd_mult.png"), width = 8, height = 5)
 
 # ====== B. Repeat analysis but focusing on the range that doesn't result in cyclic dynamics ======
 
@@ -314,7 +314,7 @@ ggplot(sd_models_flh_m_long, aes(x = st_dep, y = avg)) +
   ) +
   facet_grid(stage ~ species, scales = "free_y", labeller = labeller(species = species_labs, stage = stage_labs))
 
-ggsave(here("StageDependentComp","figures","prelim","stoch_fastlh_varstdep_mean_zoom_mult.png"), width = 8, height = 5)
+ggsave(here("figures","prelim","stoch_fastlh_varstdep_mean_zoom_mult.png"), width = 8, height = 5)
 
 # ====== B4. Plot standard deviations ======
 
@@ -368,7 +368,7 @@ ggplot(sd_models_flh_sd_long, aes(x = st_dep, y = sd, color = species)) +
   )
 
 # Save plot
-ggsave(here("StageDependentComp","figures","prelim","stoch_fastlh_varstdep_sd_zoom_mult.png"), width = 4, height = 3.8, scale = 0.8)
+ggsave(here("figures","prelim","stoch_fastlh_varstdep_sd_zoom_mult.png"), width = 4, height = 3.8, scale = 0.8)
 
 # ====== B5. Test Spearman correlation =======
 
@@ -423,7 +423,7 @@ ggplot(sd_kmat_elems_l, aes(x = st_dep, y = value, color = elem)) +
     breaks = c("V1", "V2", "V3", "V4"),
     labels = c("A1->J1", "A2->J1", "A1->J2", "A2->J2")
   )
-ggsave(here("StageDependentComp/figures/prelim/stoch_ann_elemvals_mult.png"), width = 8, height = 5)
+ggsave(here("figures/prelim/stoch_ann_elemvals_mult.png"), width = 8, height = 5)
 
 # ===== Same but with sd_models =====
 
@@ -476,7 +476,7 @@ ggplot(sd_kmat_elems_l, aes(x = st_dep, y = value, color = elem)) +
 # ggplot(temp_traj_long, aes(x = time, y = density, color = species, linetype = stage)) +
 #   geom_line() +
 #   theme_bw()
-# ggsave(here("StageDependentComp/figures/prelim/stoch_ann_0.5stdep_sim.png"), width = fig_def_width, height = fig_def_height)
+# ggsave(here("figures/prelim/stoch_ann_0.5stdep_sim.png"), width = fig_def_width, height = fig_def_height)
 # 
 # # Generate trajectory figure for stage-dependence of 0.7
 # 
@@ -489,4 +489,4 @@ ggplot(sd_kmat_elems_l, aes(x = st_dep, y = value, color = elem)) +
 # ggplot(temp_traj_long, aes(x = time, y = density, color = species, linetype = stage)) +
 #   geom_line() +
 #   theme_bw()
-# ggsave(here("StageDependentComp/figures/prelim/stoch_ann_0.7stdep_sim.png"), width = fig_def_width, height = fig_def_height)
+# ggsave(here("figures/prelim/stoch_ann_0.7stdep_sim.png"), width = fig_def_width, height = fig_def_height)

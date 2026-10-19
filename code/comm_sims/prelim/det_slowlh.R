@@ -12,9 +12,9 @@ fig_def_height <- 4
 # All paths are relative to the resilienceNERC master folder
 
 # Load R file with model functions
-source(here("StageDependentComp/code/sdcompr/sdcompr.R"))
+source(here("code/sdcompr/sdcompr.R"))
 # Load R file with custom ggplot themes
-source(here("StageDependentComp/code/themes/custom_themes.R"))
+source(here("code/themes/custom_themes.R"))
 
 # Number of life cycle stages
 n_stages <- 2
@@ -88,7 +88,7 @@ ggplot(st_indep_traj_long, aes(x = time, y = density, color = species, linetype 
   theme_jun1()
 
 # Save figure
-ggsave(here("StageDependentComp/figures/prelim/det_stindep_slowlh.png"), width = fig_def_width, height = fig_def_height)
+ggsave(here("figures/prelim/det_stindep_slowlh.png"), width = fig_def_width, height = fig_def_height)
 
 # Calculate adult / juevnile ratio & drop raw stage sizes
 st_indep_ajr <- st_indep_traj %>%
@@ -110,7 +110,7 @@ ggplot(st_indep_ajr_long, aes(x = time, y = aj_ratio, color = species)) +
   ) +
   theme_jun1()
 # Save figure
-ggsave(here("StageDependentComp/figures/prelim/det_stindep_slowlh_ajr.png"), width = fig_def_width, height = fig_def_height)
+ggsave(here("figures/prelim/det_stindep_slowlh_ajr.png"), width = fig_def_width, height = fig_def_height)
 
 # ====== 1.2. Deterministic stage-dependent competition model ======
 
@@ -150,7 +150,7 @@ ggplot(st_dep_traj_long, aes(x = time, y = density, color = species, linetype = 
          linetype = guide_legend(order = 0)) +
   theme_jun1()
 
-ggsave(here("StageDependentComp/figures/prelim/det_stdep_slowlh.png"), width = fig_def_width, height = fig_def_height)
+ggsave(here("figures/prelim/det_stdep_slowlh.png"), width = fig_def_width, height = fig_def_height)
 
 # Calculate adult / juevnile ratio & drop raw stage sizes
 st_dep_ajr <- st_dep_traj %>%
@@ -167,7 +167,7 @@ ggplot(st_dep_ajr_long, aes(x = time, y = aj_ratio, color = species)) +
   geom_line() +
   theme_bw()
 # Save figure
-ggsave(here("StageDependentComp/figures/prelim/det_stdep_slowlh_ajr.png"), width = fig_def_width, height = fig_def_height)
+ggsave(here("figures/prelim/det_stdep_slowlh_ajr.png"), width = fig_def_width, height = fig_def_height)
 
 # ===== 1.3. Generate plots to compare stage-dependent and stage-independent simulations =====
 
@@ -201,4 +201,4 @@ ggplot(merged_traj_long, aes(x = time, y = density, color = species, linetype = 
          linetype = guide_legend(order = 0)) +
   theme_jun2()
 
-ggsave(here("StageDependentComp/figures/prelim/det_slowlh_comparison.png"), width = 5.5, height = 3.3)
+ggsave(here("figures/prelim/det_slowlh_comparison.png"), width = 5.5, height = 3.3)

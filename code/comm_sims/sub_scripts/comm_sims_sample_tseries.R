@@ -7,7 +7,7 @@
 
 require("here")
 
-source(here("StageDependentComp","code","comm_sims","sub_scripts",
+source(here("code","comm_sims","sub_scripts",
             "comm_sims_def_models.R"))
 
 # === Calculate stochastic terms ===
@@ -165,18 +165,18 @@ for(dd_vr_i in 1:length(vr_names)) {
       }
       
       # Save DF so far into a file
-      if(file.exists(here("StageDependentComp","result_data","wp3",
+      if(file.exists(here("result_data","wp3",
                           paste0("sim_tseries_", dd_vr, ".csv")))) {
         write_csv(
           tseries_df,
-          here("StageDependentComp","result_data","wp3",
+          here("result_data","wp3",
                paste0("sim_tseries_", dd_vr, ".csv")),
           append = TRUE
         )
       } else {
         write_csv(
           tseries_df,
-          here("StageDependentComp","result_data","wp3",
+          here("result_data","wp3",
                paste0("sim_tseries_", dd_vr, ".csv"))
         )
       }

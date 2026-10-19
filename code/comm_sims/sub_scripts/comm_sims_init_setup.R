@@ -11,13 +11,13 @@ pacman::p_load("tidyverse", "Rage", "here", "ggpubr", "popbio", "tseries",
                "brm")
 
 # Load ggplot themes
-source(here("StageDependentComp", "code", "themes", "custom_themes.R"))
+source(here("code", "themes", "custom_themes.R"))
 
 # Load sdcompr functions
-source(here("StageDependentComp", "code", "comm_sims", "func_simple", "sdcompr.R"))
+source(here("code", "comm_sims", "func_simple", "sdcompr.R"))
 
 # Load comm-sims run script functions
-source(here("StageDependentComp", "code", "comm_sims", "sub_scripts",
+source(here("code", "comm_sims", "sub_scripts",
             "comm_sims_funcs.R"))
 
 # Set default figure size
