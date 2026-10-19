@@ -6,10 +6,6 @@
 
 # ======= Define virtual species =======
 
-require("here")
-
-source(here("code","comm_sims","sub_scripts","comm_sims_init_setup.R"))
-
 # Constant parameters
 ## Number of life cycle stages
 n_stages <- 2
